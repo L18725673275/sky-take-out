@@ -1,0 +1,32 @@
+**/target/
+.idea
+*.iml
+*.class
+*Test.java
+**/test/
+# 忽略配置文件中的敏感信息
+**/application-dev.yml
+**/application-prod.yml
+**/application-test.yml
+# 忽略环境变量文件
+.env
+.env.local
+.env.*.local
+# 忽略IDE相关文件
+.vscode/
+*.swp
+*.swo
+*~
+# 忽略操作系统文件
+.DS_Store
+Thumbs.db
+# 忽略日志文件
+**/logs/
+**/*.log
+# 忽略构建工具生成的文件
+**/node_modules/
+**/dist/
+**/build/
+# 忽略临时文件
+**/tmp/
+**/temp/
