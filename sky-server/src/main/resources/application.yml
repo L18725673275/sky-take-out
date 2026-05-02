@@ -13,6 +13,11 @@ spring:
       charset: UTF-8
       enabled: true
       force: true
+  task:
+    scheduling:
+      pool:
+        size: 1
+      thread-name-prefix: order-task-
   datasource:
     druid:
       driver-class-name: ${sky.datasource.driver-class-name}

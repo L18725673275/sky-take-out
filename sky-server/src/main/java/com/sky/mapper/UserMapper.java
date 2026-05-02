@@ -24,4 +24,21 @@ public interface UserMapper {
      */
     void insert(User user);
 
+    /**
+     * 根据日期统计新增用户数量
+     * @param beginTime 开始时间
+     * @param endTime 结束时间
+     * @return 新增用户数量
+     */
+    @Select("SELECT COUNT(*) FROM user WHERE create_time >= #{beginTime} AND create_time < #{endTime}")
+    Integer countByCreateTime(java.time.LocalDateTime beginTime, java.time.LocalDateTime endTime);
+
+    /**
+     * 统计指定日期之前的用户总数
+     * @param endTime 结束时间
+     * @return 用户总数
+     */
+    @Select("SELECT COUNT(*) FROM user WHERE create_time < #{endTime}")
+    Integer countTotalByTime(java.time.LocalDateTime endTime);
+
 }
